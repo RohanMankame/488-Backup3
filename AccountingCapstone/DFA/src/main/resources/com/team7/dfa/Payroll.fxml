@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.team7.dfa.controller.PaymentController">
+    <children>
+        <TabPane layoutX="-2.0" prefHeight="655.0" prefWidth="912.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Payroll Overview">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="658.0" prefWidth="985.0">
+                            <children>
+                                <TableView fx:id="table" layoutX="14.0" layoutY="44.0" prefHeight="374.0" prefWidth="886.0">
+                                    <columns>
+                                        <TableColumn fx:id="IDcol" prefWidth="75.0" text="ID" />
+                                        <TableColumn fx:id="NameCol" prefWidth="155.0" text="Name" />
+                                        <TableColumn fx:id="Jobcol" prefWidth="164.7999725341797" text="Job" />
+                                        <TableColumn fx:id="Salarycol" prefWidth="119.20001220703125" text="Salary" />
+                                        <TableColumn fx:id="HoursWorkedcol" prefWidth="132.0" text="HoursWorked" />
+                                        <TableColumn fx:id="Deductionscol" prefWidth="121.0" text="Deductions(tax)" />
+                                        <TableColumn fx:id="NetPaycol" minWidth="0.0" prefWidth="117.60001220703123" text="NetPay" />
+                                    </columns>
+                                </TableView>
+                                <Label layoutX="20.0" layoutY="14.0" prefHeight="32.0" prefWidth="312.0" text="Payroll Overview (2 week cycle):">
+                                    <font>
+                                        <Font size="22.0" />
+                                    </font>
+                                </Label>
+                                <Pane layoutX="13.0" layoutY="406.0" prefHeight="205.0" prefWidth="885.0">
+                                    <children>
+                                        <Label layoutX="44.0" layoutY="53.0" text="Name:" />
+                                        <Label layoutX="55.0" layoutY="86.0" text="Job:" />
+                                        <Label layoutX="44.0" layoutY="120.0" text="Salary:" />
+                                        <Label layoutY="158.0" text="Hours Worked:" />
+                                        <TextField fx:id="txtName" layoutX="79.0" layoutY="49.0" />
+                                        <TextField fx:id="txtJob" layoutX="79.0" layoutY="82.0" />
+                                        <TextField fx:id="txtSalary" layoutX="79.0" layoutY="116.0" />
+                                        <TextField fx:id="txtHoursWorked" layoutX="79.0" layoutY="154.0" />
+                                        <Button fx:id="btnAdd" layoutX="275.0" layoutY="41.0" mnemonicParsing="false" onAction="#Add" text="Add New Employee" />
+                                        <Button fx:id="btnUpdate" layoutX="275.0" layoutY="82.0" mnemonicParsing="false" onAction="#Update" text="Update Employee Details" />
+                                        <Button fx:id="bthDelete" layoutX="276.0" layoutY="129.0" mnemonicParsing="false" onAction="#Delete" text="Terminate Employee Pay" />
+                              <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add, Update &amp; Terminate Employee Payroll: " />
+                              <Text layoutX="529.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last date Payed:" />
+                              <Text layoutX="529.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Next Payment date: " />
+                              <TextField fx:id="txtID" layoutX="857.0" layoutY="167.0" prefHeight="0.0" prefWidth="0.0" />
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Current Employee Pay Status">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="PayStatustable" layoutX="14.0" layoutY="14.0" prefHeight="522.0" prefWidth="878.0">
+                                    <columns>
+                                        <TableColumn fx:id="PayNameCol" prefWidth="257.60002422332764" text="Name" />
+                                        <TableColumn fx:id="PayNetPayCol" minWidth="0.0" prefWidth="331.99993896484375" text="NetPay" />
+                                        <TableColumn fx:id="PayPayStatusCol" minWidth="0.0" prefWidth="288.800048828125" text="PayStatus" />
+                                    </columns>
+                                </TableView>
+                        <TextField fx:id="txtPayName" layoutX="747.0" layoutY="564.0" prefHeight="0.0" prefWidth="14.0" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            <Tab text="Pay Employees">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table3" layoutX="25.0" layoutY="14.0" prefHeight="470.0" prefWidth="858.0">
+                          <columns>
+                            <TableColumn fx:id="PPIDcol" prefWidth="102.40002727508545" text="ID" />
+                            <TableColumn fx:id="PPNameCol" prefWidth="147.19998168945312" text="Name" />
+                              <TableColumn fx:id="PPAmountOwedCol" prefWidth="116.0" text="Amount Owed" />
+                              <TableColumn fx:id="PPDueDateCol" prefWidth="142.39999389648438" text="Due Date of Payment " />
+                              <TableColumn fx:id="PPLastPayedCol" prefWidth="147.20001220703125" text="Date of last Payment" />
+                              <TableColumn fx:id="PPAmountPayedCol" prefWidth="130.4000244140625" text="Amount last payed" />
+                              <TableColumn fx:id="PPStatusCol" prefWidth="69.60003662109375" text="Status" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="btnPPPay" layoutX="357.0" layoutY="535.0" mnemonicParsing="false" onAction="#PayAmount" text="Pay Amount " />
+                        <Text layoutX="101.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name: " />
+                        <Text layoutX="31.0" layoutY="552.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount To Transfer:" />
+                        <TextField fx:id="txtPPName" layoutX="144.0" layoutY="497.0" />
+                        <TextField fx:id="txtPPAmountTransfer" layoutX="144.0" layoutY="535.0" />
+                        <TextField fx:id="txtPPID" layoutX="840.0" layoutY="548.0" prefHeight="26.0" prefWidth="16.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="PreviousPayments">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="Table4" layoutX="14.0" layoutY="14.0" prefHeight="574.0" prefWidth="870.0">
+                          <columns>
+                            <TableColumn fx:id="PrevPayIDCol" prefWidth="142.40002727508545" text="ID" />
+                            <TableColumn fx:id="PrevPayNameCol" prefWidth="261.59996032714844" text="Name" />
+                              <TableColumn fx:id="PrevPayDateCol" prefWidth="258.4000244140625" text="DatePayed" />
+                              <TableColumn fx:id="PrevPayStatusCol" prefWidth="208.00006103515625" text="Status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+
+</AnchorPane>
